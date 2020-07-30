@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "A Game of Thrones",
+        "release": 1996,
+        "series": "A Song of Ice and Fire"
+    },
+    {
+        "id": 2,
+        "title": "A Clash of Kings",
+        "release": 1998,
+        "series": "A Song of Ice and Fire"
+    },
+    {
+        "id": 3,
+        "title": "A Storm of Swords",
+        "release": 2000,
+        "series": "A Song of Ice and Fire"
+    },
+    {
+        "id": 4,
+        "title": "A Fest for Crows",
+        "release": 2005,
+        "series": "A Song of Ice and Fire"
+    },
+    {
+        "id": 5,
+        "title": "A Dance with Dragons",
+        "release": 2011,
+        "series": "A Song of Ice and Fire"
+    },
+    {
+        "id": 6,
+        "title": "A Dream of Spring",
+        "release": 2021,
+        "series": "A Song of Ice and Fire"
+    }
+]
