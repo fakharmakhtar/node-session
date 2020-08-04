@@ -1,7 +1,7 @@
 const service = require('../service/users.service');
+const isEmpty = require('../helpers/is-empty');
 
 async function getRecord(req, res) {
-    const isEmpty = obj => Object.keys(obj).length <= 0;
     if (!isEmpty(req.query)) {
         res.send(await service.find(req.query));
         return;
