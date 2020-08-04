@@ -1,11 +1,28 @@
 const service = require('../service/tasks.service');
-const isEmpty = require('../helpers/is-empty');
+const { isEmpty } = require('../helpers');
+const { send } = require('@sendgrid/mail');
 
 async function getRecord(req, res) {
     if (!isEmpty(req.query)) {
-        res.status(200).send(await service.find(req.query));
+        const options = {};
+        let sortBy, orderBy, limit, offset, state;
+        if (sortBy = req.query.sortBy) {
+            options.order = [[sortBy, ((orderBy = req.query.orderBy) ? orderBy : 'ASC')]]
+        }
+        if (limit = req.query.limit) {
+            options.limit = limit;
+        }
+        if (offset = req.query.offset) {
+            options.offset = offset;
+        }
+
+        if (state = req.query.state) {
+            options.where = { state }
+        }
+        res.send(await service.findAll(options));
         return;
     }
+
     res.status(200).send(await service.findAll());
 }
 

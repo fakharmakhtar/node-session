@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const tasksApiRoutes = require('./tasks');
-const usersApiRouter = require('./users')
+const usersApiRouter = require('./users');
+const multer = require('multer');
+
 
 router.get('/', (req, res) => {
     res.send('Hello World');

@@ -1,7 +1,7 @@
 const repo = require('../repositories/users.repository');
 
-async function findAll() {
-    return await repo.findAll();
+async function findAll(options = {}) {
+    return await repo.findAll(options);
 }
 
 async function find(searchBy = {}) {

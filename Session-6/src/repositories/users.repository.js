@@ -3,26 +3,25 @@ const roles = require('../models/roles.model');
 const permissions = require('../models/permissions.model');
 
 const schema = {
-    attributes: ['id', 'name'],
+    attributes: ['id', 'name', 'dob', 'email'],
     include: [
         {
             model: roles,
             include: [permissions]
-        },
-
+        }
     ]
 };
 
-async function findAll() {
-    return await users.findAll(schema);
+async function findAll(options = {}) {
+    return await users.findAll({ ...options, ...schema });
 }
 
 async function find(searchBy = {}) {
     return await users.findAll({ where: searchBy, ...schema });
 }
 
-async function findOne(name) {
-    return await users.findOne({ where: { name, ...schema } })
+async function findOne(searchBy = {}) {
+    return await users.findOne({ where: searchBy, ...schema })
 }
 
 

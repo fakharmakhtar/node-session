@@ -1,8 +1,8 @@
 const tasks = require('../models/tasks.model');
 const { states, stateHierarchy } = require('../constants/taskStates');
 
-async function findAll() {
-    return await tasks.findAll({});
+async function findAll(options = {}) {
+    return await tasks.findAll(options);
 }
 
 async function find(searchBy = {}) {

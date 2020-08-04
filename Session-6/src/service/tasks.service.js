@@ -1,10 +1,8 @@
 const repo = require('../repositories/tasks.repository');
 const { states } = require('../constants/taskStates');
 
-const Sequelize = require('sequelize');
-
-async function findAll() {
-    return await repo.findAll();
+async function findAll(options = {}) {
+    return await repo.findAll(options);
 }
 
 async function find(searchBy = {}) {

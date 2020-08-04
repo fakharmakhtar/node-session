@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
-
-const dbContext = new Sequelize('testdb', 'postgres', 'postgres', {
+const { DB_HOST, DB_NAME, DB_PASS } = process.env;
+const dbContext = new Sequelize(DB_HOST, DB_NAME, DB_PASS, {
     host: 'localhost',
     port: 5432,
     dialect: 'postgres',

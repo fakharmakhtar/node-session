@@ -14,6 +14,18 @@ const users = dbContext.define(
         name: {
             type: Sequelize.STRING,
             field: 'name'
+        },
+        dob: {
+            type: Sequelize.DATEONLY,
+            field: 'dob'
+        },
+        email: {
+            type: Sequelize.STRING,
+            field: 'email'
+        },
+        picture: {
+            type: Sequelize.STRING,
+            field: 'picture'
         }
     },
     {
